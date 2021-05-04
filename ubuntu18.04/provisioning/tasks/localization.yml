@@ -1,12 +1,19 @@
 - name: Set timezone to Asia/Tokyo
   timezone:
     name: Asia/Tokyo
-- name: install language-pack-ja
+- name: install japanese
   apt:
     name:
       - language-pack-ja
+      - language-pack-ja-base
+      - ibus-mozc
     state: present
     update_cache: yes
+- name: Uninstall ibus-kkc
+  apt:
+    name:
+      - ibus-kkc
+    state: absent
 - name: create locale ja_JP.UTF-8
   locale_gen:
     name: ja_JP.UTF-8

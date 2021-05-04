@@ -3,18 +3,20 @@
   become: true
   user: vagrant
   gather_facts: yes
-  tasks:
-    - import_tasks: ./tasks/install_docker.yml
-      tags:
-        - install_docker
-    - import_tasks: ./tasks/localization.yml
-      tags:
-        - localization
-    - import_tasks: ./tasks/install_misc.yml
-      tags:
-        - install_misc
   roles:
-    - role: robertdebock.gnome
     - role: gantsign.keyboard
       keyboard_model: pc105
       keyboard_layout: jp
+  tasks:
+    - import_tasks: ./tasks/install_docker.yml
+      tags:
+        - tools
+    - import_tasks: ./tasks/localization.yml
+      tags:
+        - japan
+    - import_tasks: ./tasks/install_misc.yml
+      tags:
+        - tools
+    - import_tasks: ./tasks/ubuntu-desktop.yml
+      tags:
+        - gui
