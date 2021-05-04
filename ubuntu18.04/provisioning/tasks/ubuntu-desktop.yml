@@ -1,9 +1,34 @@
-- name: Install packages
+- name: Install ubuntu-desktop (GNOME)
   apt:
     name:
       - ubuntu-desktop
+    state: present
+    update_cache: yes
+  register: ubuntu_desktop
+- name: Install Japanese manuals
+  apt:
+    name:
       - manpages-ja
       - manpages-ja-dev
     state: present
     update_cache: yes
-
+- name: Purge old virtualbox-guest
+  apt:
+    name:
+      - virtualbox-guest-*
+    state: absent
+- name: Install dkms
+  apt:
+    name:
+      - dkms
+      - linux-headers-{{ ansible_kernel }}
+      - build-essential
+      - gcc
+      - make
+      - perl
+    state: present
+    update_cache: yes
+  register: apt_dkms
+- name: Reboot after installing dkms
+  reboot:
+  when: apt_dkms.changed or ubuntu_desktop.changed
