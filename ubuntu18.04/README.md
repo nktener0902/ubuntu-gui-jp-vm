@@ -4,7 +4,6 @@
 * Japanese
 
 ```bash
-ansible-galaxy install robertdebock.gnome
 ansible-galaxy install gantsign.keyboard
 ```
 
