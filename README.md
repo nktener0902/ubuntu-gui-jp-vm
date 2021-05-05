@@ -1,19 +1,26 @@
-# 日本語設定済みUbuntuのVMを作成する
+# Ubuntu VM作成スクリプト
 
-* Ubuntu18.04
-* GNOME
-* Japanese
+作成されるVMの内容は以下のとおりです。
 
-## How to use
+* VirtualBox VM
+* ゲストOS: Ubuntu18.04
+* GUI: GNOME
+* 日本語設定済み
+
+## 使い方
 
 ```bash
 ansible-galaxy install gantsign.keyboard
 ./bootstrap.sh
 ```
 
-After provisioning, stop VM and attach a blank optic device to the VM.
+VirtualBoxで画面サイズを動的に拡張できるようにするためには、以下の作業が必要です。
 
-Restart the VM and install "VirtualBox Guest Additions" by following commands in the created VM,.
+1. プロビジョニング完了後、VMを停止する
+2. VirtualBoxの設定から作成されたVMに空の光学ドライブを作成し取り付ける
+3. VMを再度起動する
+4. VirtualBoxのメニューの「Device」->「Insert Guest Additions CD image」
+5. ゲストOS内で、以下のコマンドを入力する
 
 ```bash
 # In the VM
