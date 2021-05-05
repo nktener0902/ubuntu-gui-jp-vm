@@ -58,6 +58,11 @@ Vagrant.configure("2") do |config|
     vb.memory = "8192"
 
     vb.cpus = "4"
+    vb.customize [
+      "modifyvm", :id,
+      "--ioapic", "on",             # I/O APICを有効化
+      "--vram", "128"               # ビデオメモリ
+    ]
   end
   # config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
