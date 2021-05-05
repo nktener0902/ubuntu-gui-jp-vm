@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "autoware"
+    vb.name = "my-ubuntu"
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
 
