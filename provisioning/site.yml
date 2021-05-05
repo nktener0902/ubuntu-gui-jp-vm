@@ -8,9 +8,6 @@
       keyboard_model: pc105
       keyboard_layout: jp
   tasks:
-    - import_tasks: ./tasks/install_docker.yml
-      tags:
-        - tools
     - import_tasks: ./tasks/localization.yml
       tags:
         - japan
