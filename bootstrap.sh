@@ -2,7 +2,6 @@
 
 if type ansible-galaxy > /dev/null 2>&1
 then
-    ansible-galaxy install robertdebock.gnome
     ansible-galaxy install gantsign.keyboard
 else
     echo "Not found ansible-galaxy command..."
