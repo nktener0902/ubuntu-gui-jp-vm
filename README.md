@@ -7,10 +7,15 @@
 * GUI: GNOME
 * 日本語設定済み
 
+## 前提
+
+* ansible
+* vagrant
+* VirtualBox
+
 ## 使い方
 
 ```bash
-ansible-galaxy install gantsign.keyboard
 ./bootstrap.sh
 ```
 
