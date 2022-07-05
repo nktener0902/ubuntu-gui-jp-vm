@@ -3,7 +3,7 @@
 作成されるVMの内容は以下のとおりです。
 
 * VirtualBox VM
-* ゲストOS: Ubuntu18.04
+* ゲストOS: Ubuntu22.04
 * GUI: GNOME
 * 日本語設定済み
 
@@ -16,6 +16,8 @@
 ## 使い方
 
 ```bash
+python -m venv venv && source venv/bin/activate
+pip install -U pip && pip install ansible
 ./bootstrap.sh
 ```
 
